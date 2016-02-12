@@ -34,9 +34,35 @@ namespace MvcModels.Controllers
             return View("Index", model);
         }
 
-        public ActionResult DisplaySummary([Bind(Prefix="HomeAddress",Exclude="Country")]AddressSummary summary)
+        public ActionResult DisplaySummary([Bind(Prefix="HomeAddress")]AddressSummary summary)
         {
             return View(summary);
+        }
+
+        //public ActionResult Names(string[] names)
+        //{
+        //    names = names ?? new string[0];
+        //    return View(names);
+        //}
+
+        public ActionResult Names(IList<string> names)
+        {
+            names = names ?? new List<string>();
+            return View(names);
+        }
+
+        //public ActionResult Address(IList<AddressSummary> addresses)
+        //{
+        //    addresses = addresses ?? new List<AddressSummary>();
+        //    return View(addresses);
+        //}
+
+        public ActionResult Address(FormCollection formData)
+        {
+            IList<AddressSummary> addresses = new List<AddressSummary>();
+            //UpdateModel(addresses, new FormValueProvider(ControllerContext));
+            UpdateModel(addresses,formData);
+            return View(addresses);
         }
 	}
 }

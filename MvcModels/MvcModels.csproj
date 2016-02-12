@@ -106,6 +106,8 @@
     <Content Include="packages.config" />
     <Content Include="Views\Home\CreatePerson.cshtml" />
     <Content Include="Views\Home\DisplaySummary.cshtml" />
+    <Content Include="Views\Home\Names.cshtml" />
+    <Content Include="Views\Home\Address.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
